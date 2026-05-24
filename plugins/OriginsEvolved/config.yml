@@ -1,0 +1,26 @@
+# OriginsEvolved main configuration
+
+# transformation settings
+dragon_transform_cooldown: 3600 # seconds
+dragon_form_duration: 300 # seconds
+transform_cooldown: 60 # generic transform cooldown in seconds
+
+# ability cooldowns (seconds). you can set per-ability or use 'default'.
+ability_cooldowns:
+  default: 5
+  arcane_analysis: 10
+  arcane_shield: 30
+  glide: 15
+
+# ability caster configuration - item that players hold to activate their origin ability
+ability_caster:
+  material: BLAZE_ROD
+  name: '&bAbility Caster'
+
+# evolution requirements (in seconds of playtime)
+evolution_requirements:
+  default: 0    # no requirement
+  dragon: 3600  # example: must play one hour to evolve
+
+# general defaults
+allow-origin-reset: true

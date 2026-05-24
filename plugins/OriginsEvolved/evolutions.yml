@@ -1,0 +1,15 @@
+# Evolution definitions
+
+ender_dragon:
+  base_origin: dragon_borne
+  requirements:
+    playtime_hours: 20
+    kill: ender_dragon
+    item: dragon_orb
+    world: the_end
+  unlocks:
+    transform: ender_dragon
+    abilities:
+      - dragon_breath
+      - dragon_flight
+      - ender_teleport

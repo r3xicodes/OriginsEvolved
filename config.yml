@@ -1,0 +1,70 @@
+# default configuration for OriginsEvolved
+
+# transformation settings
+dragon_transform_cooldown: 3600 # seconds
+dragon_form_duration: 300 # seconds
+transform_cooldown: 60 # generic transform cooldown in seconds
+
+# ability cooldowns (seconds). you can set per-ability or use 'default'.
+ability_cooldowns:
+  default: 5
+  arcane_analysis: 10
+  arcane_shield: 30
+  glide: 15
+  swift_swim: 10
+  mermaids_grace: 5
+  veilwalk: 20
+  potion_possession: 60
+  charge_jump: 5
+  mega_jump: 30
+  lucky_eggs: 60
+  pounce: 30
+  dash: 5
+  verdant_grasp: 60
+  barkskin: 120
+  ender_chest: 15
+  levitation: 45
+  howl: 300
+  transform: 1200
+  leap: 10
+  breeze_ball: 20
+  wind_launch: 15
+  infectious_bite: 60
+  tenacious: 300
+  shriek: 30
+  prospecting: 300
+  rallying_cry: 240
+  winged_ascension: 45
+  chooser_of_the_slain: 180
+  blood_surge: 180
+  bat_form: 300
+  dragon_breath: 90
+  draconic_leap: 120
+  horn_charge: 60
+  burrow: 120
+  hive_call: 60
+  tunnel_dig: 90
+  boost: 30
+  thermal_surge: 30
+  fire_resistance: 60
+
+# evolution requirements (in seconds of playtime)
+evolution_requirements:
+  default: 0    # no requirement
+  dragon: 3600  # example: must play one hour to evolve
+
+# ability caster configuration - items that players can hold to activate abilities
+ability_caster:
+  primary:
+    material: BLAZE_ROD
+    name: '&bPrimary Ability Caster'
+  secondary:
+    material: STICK
+    name: '&aSecondary Ability Caster'
+
+# example bossbar settings (colors may be adjusted per origin/ability)
+# bossbar:
+#   default_color: WHITE
+
+# general defaults
+allow-origin-reset: true

@@ -1,0 +1,97 @@
+# Custom items
+
+ability_orb:
+  display_name: "&fAbility Orb"
+  lore:
+    - "Right‑click: primary ability"
+    - "Shift+right‑click: secondary ability"
+    - "Crouch+right‑click: crouch ability"
+
+
+dragon_orb:
+  display_name: "Dragon Orb"
+  rarity: "Mythic"
+  lore:
+    - "A pulsating orb infused with dragon essence."
+  evolution_catalyst: true
+
+# Ability orbs - easy to craft, grant one use of the corresponding ability
+orb_arcane_analysis:
+  display_name: "&5Arcane Analysis Orb"
+  lore:
+    - "Use to cast Arcane Analysis."
+  ability: arcane_analysis
+
+orb_catalyst:
+  display_name: "&6Catalyst Orb"
+  lore:
+    - "Use to toggle your Catalyst effect."
+  ability: catalyst
+
+orb_arcane_shield:
+  display_name: "&3Arcane Shield Orb"
+  lore:
+    - "Use to generate an arcane shield."
+  ability: arcane_shield
+
+orb_pollinate:
+  display_name: "&aPollinate Orb"
+  lore:
+    - "Use to trigger Pollinate."
+  ability: pollinate
+
+orb_final_sting:
+  display_name: "&cFinal Sting Orb"
+  lore:
+    - "Use to activate your Final Sting toggle."
+  ability: final_sting
+
+orb_buzz_away:
+  display_name: "&bBuzz Away Orb"
+  lore:
+    - "Use while crouching to Buzz Away."
+  ability: buzz_away
+
+orb_toggle_climb:
+  display_name: "&7Climb Toggle Orb"
+  lore:
+    - "Use to toggle climbing mode."
+  ability: toggle_climb
+
+orb_fuel_consumption:
+  display_name: "&4Fuel Consumption Orb"
+  lore:
+    - "Use to consume fuel and increase heat."
+  ability: fuel_consumption
+
+orb_thermal_surge:
+  display_name: "&1Thermal Surge Orb"
+  lore:
+    - "Use to purge effects and boost heat."
+  ability: thermal_surge
+
+orb_of_origin:
+  display_name: "&eOrb of Origin"
+  lore:
+    - "The ultimate object of power. Crafting it is a monumental task."
+  rarity: "Legendary"
+
+alchemist_flask:
+  display_name: "&dAlchemist's Flask"
+  lore:
+    - "Contains arcane reagents."
+
+arachnid_web_silk:
+  display_name: "&8Web Silk"
+  lore:
+    - "Sticky thread from an Arachnid's spinnerets."
+
+bee_stinger:
+  display_name: "&cBee Stinger"
+  lore:
+    - "A sharp stinger dropped by a Bee origin."
+
+blazeborn_core:
+  display_name: "&4Blaze Core"
+  lore:
+    - "The heart of a living flame being."

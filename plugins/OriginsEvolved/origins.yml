@@ -1,0 +1,61 @@
+# Define available origins
+dragon_borne:
+  name: Dragonborne
+  description: A being with the blood of dragons.
+  primary: glide
+  secondary: fire_resistance
+  crouch: lava_heal
+  weaknesses:
+    - slow_regeneration
+    - water_damage
+  evolution: ender_dragon
+  icon: DRAGON_EGG
+
+human:
+  name: Human
+  description: Ordinary mortal with balanced traits.
+  primary: none
+  secondary: none
+  crouch: none
+  weaknesses: []
+  icon: PLAYER_HEAD
+
+alchemist:
+  name: Alchemist
+  description: The child of a village Librarian and a witch.
+  primary: arcane_analysis
+  secondary: catalyst
+  crouch: arcane_shield
+  weaknesses:
+    - none
+  icon: POTION
+
+arachnid:
+  name: Arachnid
+  description: Eight‑legged crawler with climbing prowess.
+  primary: none
+  secondary: toggle_climb
+  crouch: none
+  weaknesses:
+    - water_damage
+  icon: SPIDER_EYE
+
+bee:
+  name: Bee
+  description: A buzzy small creature fond of honey.
+  primary: pollinate
+  secondary: final_sting
+  crouch: buzz_away
+  weaknesses:
+    - low_health
+  icon: HONEYCOMB
+
+blazeborn:
+  name: Blazeborn
+  description: A creature born of flame and heat.
+  primary: fuel_consumption
+  secondary: thermal_surge
+  crouch: none
+  weaknesses:
+    - cold_damage
+  icon: BLAZE_ROD

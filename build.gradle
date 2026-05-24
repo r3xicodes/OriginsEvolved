@@ -1,0 +1,81 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
+}
+
+import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
+
+group = 'org.origins'
+version = '1.0.0'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src']
+        }
+    }
+}
+
+dependencies {
+    // Paper API for compatible server (fallback to 1.20.2 since JDK 17)
+    compileOnly 'io.papermc.paper:paper-api:1.20.2-R0.1-SNAPSHOT'
+    // additional libs are optional and not required to compile
+    // uncomment lines below if you want to compile against these APIs
+    // compileOnly 'com.comphenix.protocol:ProtocolLib:6.2.0'       // for packet manipulation
+    // compileOnly 'me.libraryaddict:LibsDisguises:10.0.3'          // disguises
+    // compileOnly 'com.github.placeholderapi:placeholderapi:2.10.9'// text placeholders
+    // compileOnly 'net.milkbowl.vault:VaultAPI:1.7'                // economy/permission API
+    // you can also add your own dependencies here, e.g.:
+    // compileOnly 'org.apache.commons:commons-text:1.10.0'
+}
+
+repositories {
+    mavenCentral()
+    maven { url = 'https://repo.papermc.io/repository/maven-public/' }
+    maven { url = 'https://repo.dmulloy2.net/repository/public/' }
+}
+
+jar {
+    archiveBaseName.set('OriginsEvolved')
+    from('plugin.yml') {
+        into ''
+    }
+    from('config.yml') {
+        into ''
+    }
+    from('origins.yml') {
+        into ''
+        includeEmptyDirs = false
+    }
+    from('evolutions.yml') {
+        into ''
+    }
+    from('items.yml') {
+        into ''
+    }
+    from('playerdata.yml') {
+        into ''
+    }
+    manifest {
+        attributes(
+                'Main-Class': 'org.origins.OriginsEvolved'
+        )
+    }
+}
+
+shadowJar {
+    relocate 'org.bstats', 'org.origins.libs.bstats'
+    archiveBaseName.set('OriginsEvolved')
+    archiveVersion.set(version)
+}
+
+tasks.register('buildPlugin', ShadowJar) {
+    archiveClassifier.set('')
+    from(sourceSets.main.output)
+    configurations = [project.configurations.compileClasspath]
+}

@@ -1,0 +1,293 @@
+# Define available origins
+
+dragon_borne:
+  name: Dragonborne
+  description: A being with the blood of dragons.
+  primary: glide
+  secondary: fire_resistance
+  crouch: lava_heal
+  weaknesses:
+    - slow_regeneration
+    - water_damage
+  evolution: ender_dragon
+  icon: DRAGON_EGG
+
+human:
+  name: Human
+  description: Ordinary mortal with balanced traits.
+  primary: none
+  secondary: none
+  crouch: none
+  weaknesses: []
+  icon: PLAYER_HEAD
+
+alchemist:
+  name: Alchemist
+  description: The child of a village Librarian and a witch.
+  primary: arcane_analysis
+  secondary: catalyst
+  crouch: arcane_shield
+  weaknesses:
+    - none
+  icon: POTION
+
+arachnid:
+  name: Arachnid
+  description: Eight‑legged crawler with climbing prowess.
+  primary: none
+  secondary: toggle_climb
+  crouch: none
+  weaknesses:
+    - water_damage
+  icon: SPIDER_EYE
+
+bee:
+  name: Bee
+  description: A buzzy small creature fond of honey.
+  primary: pollinate
+  secondary: final_sting
+  crouch: buzz_away
+  weaknesses:
+    - low_health
+  icon: HONEYCOMB
+
+blazeborn:
+  name: Blazeborn
+  description: A creature born of flame and heat.
+  primary: fuel_consumption
+  secondary: thermal_surge
+  crouch: none
+  weaknesses:
+    - cold_damage
+  icon: BLAZE_ROD
+
+# additional origins
+chicken:
+  name: Chicken
+  description: A fast herbivore blessed with luck.
+  primary: lucky_eggs
+  secondary: none
+  crouch: flutter
+  weaknesses:
+    - fragile
+  icon: CHICKEN
+
+elytrian:
+  name: Elytrian
+  description: The biggest bird in the sky, built for gliding.
+  primary: boost
+  secondary: fold_wings
+  crouch: none
+  weaknesses:
+    - heavy_projectiles
+  icon: ELYTRA
+
+enderian:
+  name: Enderian
+  description: Half-human, half-enderman with a thirst for teleportation.
+  primary: blink
+  secondary: distortion_dodge
+  crouch: none
+  weaknesses:
+    - water_damage
+  icon: ENDER_PEARL
+
+fairy:
+  name: Fairy
+  description: A pacifist small creature skilled at building.
+  primary: energize
+  secondary: none
+  crouch: none
+  weaknesses:
+    - tiny
+  icon: FEATHER
+
+giant:
+  name: Giant
+  description: A massive humanoid with great strength.
+  primary: roar
+  secondary: enlarge
+  crouch: none
+  weaknesses:
+    - slow
+  icon: ENDERMAN_SPAWN_EGG
+
+huntsman:
+  name: Huntsman
+  description: A rogue ranger whose arrows do the talking.
+  primary: precision
+  secondary: change_tip
+  crouch: stalk
+  weaknesses:
+    - weak_melee
+  icon: BOW
+
+inchling:
+  name: Inchling
+  description: Tiny and fragile, but nimble.
+  primary: flee
+  secondary: none
+  crouch: none
+  weaknesses:
+    - small
+  icon: ITEM_FRAME
+
+merling:
+  name: Merling
+  description: King of the ocean; must remain hydrated.
+  primary: swift_swim
+  secondary: mermaids_grace
+  crouch: none
+  weaknesses:
+    - dry_out
+  icon: NAUTILUS_SHELL
+
+phantom:
+  name: Phantom
+  description: A lost soul, haunted by sunlight.
+  primary: veilwalk
+  secondary: potion_possession
+  crouch: none
+  weaknesses:
+    - sun_exposure
+  icon: PHANTOM_MEMBRANE
+
+bunny:
+  name: Bunny
+  description: A swift herbivore with powerful legs.
+  primary: charge_jump
+  secondary: mega_jump
+  crouch: none
+  weaknesses:
+    - grounded_only
+  icon: RABBIT_FOOT
+
+pawsworn:
+  name: Pawsworn
+  description: Half beast, half man that is an expert at hunting.
+  primary: pounce
+  secondary: dash
+  crouch: none
+  weaknesses:
+    - none
+  icon: OAK_SAPLING
+
+phytokin:
+  name: Phytokin
+  description: The bridge between man and tree.
+  primary: verdant_grasp
+  secondary: barkskin
+  crouch: none
+  weaknesses:
+    - none
+  icon: SPRUCE_SAPLING
+
+shulk:
+  name: Shulk
+  description: Versatile and tanky.
+  primary: ender_chest
+  secondary: levitation
+  crouch: none
+  weaknesses:
+    - none
+  icon: SHULKER_SHELL
+
+werewolf:
+  name: Werewolf
+  description: Cursed with Wolfsblood.
+  primary: howl
+  secondary: transform
+  crouch: leap
+  weaknesses:
+    - none
+  icon: WOLF_SPAWN_EGG
+
+breezeborn:
+  name: Breezeborn
+  description: Born of wind and open skies.
+  primary: breeze_ball
+  secondary: wind_launch
+  crouch: none
+  weaknesses:
+    - none
+  icon: FEATHER
+
+undead:
+  name: Undead
+  description: Reanimated by dark forces.
+  primary: infectious_bite
+  secondary: tenacious
+  crouch: none
+  weaknesses:
+    - none
+  icon: WITHER_SKELETON_SKULL
+
+sculkborn:
+  name: Sculkborn
+  description: A creature bound to the Deep Dark.
+  primary: shriek
+  secondary: none
+  crouch: none
+  weaknesses:
+    - none
+  icon: SCULK
+
+dwarf:
+  name: Dwarf
+  description: Forged in stone and tradition.
+  primary: prospecting
+  secondary: rallying_cry
+  crouch: none
+  weaknesses:
+    - none
+  icon: IRON_PICKAXE
+
+valkyrie:
+  name: Valkyrie
+  description: Chosen of the skies.
+  primary: winged_ascension
+  secondary: chooser_of_the_slain
+  crouch: none
+  weaknesses:
+    - none
+  icon: ELYTRA
+
+vampire:
+  name: Vampire
+  description: A cursed immortal sustained by blood.
+  primary: blood_surge
+  secondary: bat_form
+  crouch: none
+  weaknesses:
+    - none
+  icon: REDSTONE
+
+dragonborne:
+  name: Dragonborne
+  description: Born from the blood of ancient dragons.
+  primary: dragon_breath
+  secondary: draconic_leap
+  crouch: glide
+  weaknesses:
+    - none
+  icon: DRAGON_EGG
+
+beetle:
+  name: Beetle
+  description: A hardy insectoid adapted to survival and endurance.
+  primary: horn_charge
+  secondary: burrow
+  crouch: none
+  weaknesses:
+    - none
+  icon: BEETROOT
+
+ant:
+  name: Ant
+  description: A cooperative insectoid bound to the colony.
+  primary: hive_call
+  secondary: tunnel_dig
+  crouch: none
+  weaknesses:
+    - none
+  icon: ACACIA_SAPLING

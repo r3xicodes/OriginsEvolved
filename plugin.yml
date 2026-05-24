@@ -1,0 +1,34 @@
+name: OriginsEvolved
+main: org.origins.OriginsEvolved
+version: 1.0.0
+api-version: 1.21
+author: Copilot
+softdepend:
+  - LibsDisguises
+  - ProtocolLib
+  - Vault
+  - PlaceholderAPI
+commands:
+  origin:
+    description: Main command for OriginsEvolved plugin
+    usage: /origin <subcommand>
+    aliases: [orig]
+permissions:
+  origin.admin:
+    description: Gives access to all admin origin commands
+    default: op
+  origin.choose:
+    description: Allows player to choose an origin
+    default: true
+  origin.evolve:
+    description: Allows player to evolve their origin
+    default: true
+  origin.transform:
+    description: Allows player to transform using origin abilities
+    default: true
+  origin.ability:
+    description: Use an active ability
+    default: true
+  origin.info:
+    description: View origin info
+    default: true
