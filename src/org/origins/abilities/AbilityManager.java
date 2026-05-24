@@ -2,71 +2,23 @@ package org.origins.abilities;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.io.File;
+import java.io.IOException;
+import java.lang.reflect.Modifier;
+import java.net.JarURLConnection;
+import java.net.URL;
+import java.net.URLDecoder;
+import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.jar.JarEntry;
+import java.util.jar.JarFile;
 import org.bukkit.entity.Player;
 import org.bukkit.ChatColor;
-import org.origins.abilities.AbilityUtil;
 import org.origins.OriginsEvolved;
-import org.origins.abilities.GlideAbility;
-import org.origins.abilities.ArcaneAnalysisAbility;
-import org.origins.abilities.CatalystAbility;
-import org.origins.abilities.ArcaneShieldAbility;
-import org.origins.abilities.PollinateAbility;
-import org.origins.abilities.FinalStingAbility;
-import org.origins.abilities.BuzzAwayAbility;
-import org.origins.abilities.ToggleClimbAbility;
-import org.origins.abilities.FuelConsumptionAbility;
-import org.origins.abilities.ThermalSurgeAbility;
-import org.origins.abilities.FireResistanceAbility;
-import org.origins.abilities.LavaHealAbility;
-// new origins
-import org.origins.abilities.LuckyEggsAbility;
-import org.origins.abilities.FlutterAbility;
-import org.origins.abilities.BoostAbility;
-import org.origins.abilities.FoldWingsAbility;
-import org.origins.abilities.BlinkAbility;
-import org.origins.abilities.DistortionDodgeAbility;
-import org.origins.abilities.EnergizeAbility;
-import org.origins.abilities.RoarAbility;
-import org.origins.abilities.EnlargeAbility;
-import org.origins.abilities.PrecisionAbility;
-import org.origins.abilities.ChangeTipAbility;
-import org.origins.abilities.StalkAbility;
-import org.origins.abilities.FleeAbility;
-import org.origins.abilities.SwiftSwimAbility;
-import org.origins.abilities.MermaidsGraceAbility;
-import org.origins.abilities.VeilwalkAbility;
-import org.origins.abilities.PotionPossessionAbility;
-import org.origins.abilities.ChargeJumpAbility;
-import org.origins.abilities.MegaJumpAbility;
-// additional new classes
-import org.origins.abilities.PounceAbility;
-import org.origins.abilities.DashAbility;
-import org.origins.abilities.VerdantGraspAbility;
-import org.origins.abilities.BarkskinAbility;
-import org.origins.abilities.EnderChestAbility;
-import org.origins.abilities.LevitationAbility;
-import org.origins.abilities.HowlAbility;
-import org.origins.abilities.TransformAbility;
-import org.origins.abilities.BreezeBallAbility;
-import org.origins.abilities.WindLaunchAbility;
-import org.origins.abilities.InfectiousBiteAbility;
-import org.origins.abilities.TenaciousAbility;
-import org.origins.abilities.ShriekAbility;
-import org.origins.abilities.ProspectingAbility;
-import org.origins.abilities.RallyingCryAbility;
-import org.origins.abilities.WingedAscensionAbility;
-import org.origins.abilities.ChooserOfTheSlainAbility;
-import org.origins.abilities.BloodSurgeAbility;
-import org.origins.abilities.BatFormAbility;
-import org.origins.abilities.DragonBreathAbility;
-import org.origins.abilities.DraconicLeapAbility;
-import org.origins.abilities.HornChargeAbility;
-import org.origins.abilities.BurrowAbility;
-import org.origins.abilities.HiveCallAbility;
-import org.origins.abilities.TunnelDigAbility;
-import org.origins.abilities.LeapAbility;
+import org.origins.abilities.Ability;
+import org.origins.abilities.AbilityUtil;
+import org.origins.abilities.*;
 
 public class AbilityManager {
     private final JavaPlugin plugin;
@@ -74,81 +26,71 @@ public class AbilityManager {
 
     public AbilityManager(JavaPlugin plugin) {
         this.plugin = plugin;
-        // register built-in abilities here
-        registerAbility(new GlideAbility());
-        registerAbility(new ArcaneAnalysisAbility());
-        registerAbility(new CatalystAbility());
-        registerAbility(new ArcaneShieldAbility());
-        registerAbility(new PollinateAbility());
-        registerAbility(new FinalStingAbility());
-        registerAbility(new BuzzAwayAbility());
-        registerAbility(new ToggleClimbAbility());
-        registerAbility(new FuelConsumptionAbility());
-        registerAbility(new ThermalSurgeAbility());
-        registerAbility(new FireResistanceAbility());
-        registerAbility(new LavaHealAbility());
-        // originsinfo abilities
-        registerAbility(new LuckyEggsAbility());
-        registerAbility(new FlutterAbility());
-        registerAbility(new BoostAbility());
-        registerAbility(new FoldWingsAbility());
-        registerAbility(new BlinkAbility());
-        registerAbility(new DistortionDodgeAbility());
-        registerAbility(new EnergizeAbility());
-        registerAbility(new RoarAbility());
-        registerAbility(new EnlargeAbility());
-        registerAbility(new PrecisionAbility());
-        registerAbility(new ChangeTipAbility());
-        registerAbility(new StalkAbility());
-        registerAbility(new FleeAbility());
-        // merling
-        registerAbility(new SwiftSwimAbility());
-        registerAbility(new MermaidsGraceAbility());
-        // phantom
-        registerAbility(new VeilwalkAbility());
-        registerAbility(new PotionPossessionAbility());
-        // bunny
-        registerAbility(new ChargeJumpAbility());
-        registerAbility(new MegaJumpAbility());
-        // Pawsworn
-        registerAbility(new PounceAbility());
-        registerAbility(new DashAbility());
-        // Phytokin
-        registerAbility(new VerdantGraspAbility());
-        registerAbility(new BarkskinAbility());
-        // Shulk
-        registerAbility(new EnderChestAbility());
-        registerAbility(new LevitationAbility());
-        // Werewolf
-        registerAbility(new HowlAbility());
-        registerAbility(new TransformAbility());
-        registerAbility(new LeapAbility());
-        // Breezeborn
-        registerAbility(new BreezeBallAbility());
-        registerAbility(new WindLaunchAbility());
-        // Undead
-        registerAbility(new InfectiousBiteAbility());
-        registerAbility(new TenaciousAbility());
-        // Sculkborn
-        registerAbility(new ShriekAbility());
-        // Dwarf
-        registerAbility(new ProspectingAbility());
-        registerAbility(new RallyingCryAbility());
-        // Valkyrie
-        registerAbility(new WingedAscensionAbility());
-        registerAbility(new ChooserOfTheSlainAbility());
-        // Vampire
-        registerAbility(new BloodSurgeAbility());
-        registerAbility(new BatFormAbility());
-        // Dragonborne
-        registerAbility(new DragonBreathAbility());
-        registerAbility(new DraconicLeapAbility());
-        // Beetle
-        registerAbility(new HornChargeAbility());
-        registerAbility(new BurrowAbility());
-        // Ant
-        registerAbility(new HiveCallAbility());
-        registerAbility(new TunnelDigAbility());
+        // auto-discover abilities in both the root abilities package and
+        // the future abilityImplementations subpackage so files can be moved
+        loadAbilitiesFromPackage("org.origins.abilities");
+        loadAbilitiesFromPackage("org.origins.abilities.abilityImplementations");
+    }
+
+    private void loadAbilitiesFromPackage(String packageName) {
+        try {
+            String path = packageName.replace('.', '/');
+            ClassLoader cl = plugin.getClass().getClassLoader();
+            Enumeration<URL> resources = cl.getResources(path);
+            while (resources.hasMoreElements()) {
+                URL resource = resources.nextElement();
+                if (resource.getProtocol().equals("file")) {
+                    File dir = new File(URLDecoder.decode(resource.getPath(), "UTF-8"));
+                    File[] files = dir.listFiles();
+                    if (files == null) continue;
+                    for (File f : files) {
+                        if (!f.getName().endsWith(".class")) continue;
+                        // derive full class name
+                        String className = packageName + "." + f.getName().replace(".class", "");
+                        tryLoadAndRegister(className);
+                    }
+                } else if (resource.getProtocol().equals("jar")) {
+                    JarURLConnection conn = (JarURLConnection) resource.openConnection();
+                    try (JarFile jar = conn.getJarFile()) {
+                        Enumeration<JarEntry> entries = jar.entries();
+                        while (entries.hasMoreElements()) {
+                            JarEntry entry = entries.nextElement();
+                            String name = entry.getName();
+                            if (!name.startsWith(path) || !name.endsWith(".class")) continue;
+                            if (name.contains("$")) continue;
+                            String className = name.replace('/', '.').replace(".class", "");
+                            tryLoadAndRegister(className);
+                        }
+                    }
+                }
+            }
+            // fallback file-scan directly from classloader resource
+            URL pkg = plugin.getClass().getClassLoader().getResource(path);
+            if (pkg != null && pkg.getProtocol().equals("file")) {
+                File dir = new File(URLDecoder.decode(pkg.getPath(), "UTF-8"));
+                File[] files = dir.listFiles((d, name) -> name.endsWith(".class") && !name.contains("$"));
+                if (files != null) {
+                    for (File f : files) {
+                        String className = packageName + "." + f.getName().replace(".class", "");
+                        tryLoadAndRegister(className);
+                    }
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void tryLoadAndRegister(String className) {
+        try {
+            Class<?> cls = Class.forName(className);
+            if (Ability.class.isAssignableFrom(cls) && !Modifier.isAbstract(cls.getModifiers())) {
+                Ability ability = (Ability) cls.getDeclaredConstructor().newInstance();
+                registerAbility(ability);
+            }
+        } catch (Throwable t) {
+            // ignore classes we can't load/instantiate
+        }
     }
 
     public Ability getAbility(String id) {
