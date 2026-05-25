@@ -20,6 +20,7 @@ public class OriginsEvolved extends JavaPlugin {
     private ItemManager itemManager;
     private TransformManager transformManager;
     private org.origins.abilities.AbilityManager abilityManager;
+    private org.origins.attributes.AttributeManager attributeManager;
 
     public static OriginsEvolved get() {
         return instance;
@@ -29,6 +30,8 @@ public class OriginsEvolved extends JavaPlugin {
     public void onEnable() {
         instance = this;
         saveDefaultConfig();
+        saveResource("origins_attributes.yml", false);
+        saveResource("originsinfo.md", false);
         reloadConfigs();
         setupManagers();
         getCommand("origin").setExecutor(new OriginCommand());
@@ -42,9 +45,12 @@ public class OriginsEvolved extends JavaPlugin {
         // boss bar cleanup
         getServer().getPluginManager().registerEvents(new org.origins.listeners.BossBarListener(), this);
         getServer().getPluginManager().registerEvents(new org.origins.listeners.KeybindListener(), this);
+        // attribute listener for fall-damage and other attribute-driven behavior
+        getServer().getPluginManager().registerEvents(new org.origins.attributes.AttributeListener(this, attributeManager), this);
+        // inventory listener to keep tool enchants in sync when players move items or switch slots
+        getServer().getPluginManager().registerEvents(new org.origins.attributes.InventoryListener(this, attributeManager), this);
         // listen for respawn to reset origin bars
         getServer().getPluginManager().registerEvents(new org.origins.listeners.PlayerRespawnListener(), this);
-
         // playtime tracking every minute
         getServer().getScheduler().runTaskTimer(this, () -> {
             getServer().getOnlinePlayers().forEach(p -> {
@@ -183,6 +189,7 @@ public class OriginsEvolved extends JavaPlugin {
         itemManager = new ItemManager(this);
         transformManager = new TransformManager(this);
         abilityManager = new org.origins.abilities.AbilityManager(this);
+        attributeManager = new org.origins.attributes.AttributeManager(this);
     }
 
     public void reloadConfigs() {
@@ -215,6 +222,29 @@ public class OriginsEvolved extends JavaPlugin {
 
     public org.origins.abilities.AbilityManager getAbilityManager() {
         return abilityManager;
+    }
+
+    public org.origins.attributes.AttributeManager getAttributeManager() { return attributeManager; }
+
+    /**
+     * Set a player's origin with proper attribute reset and application.
+     */
+    public void setPlayerOrigin(org.bukkit.entity.Player player, String originId) {
+        // reset attributes to vanilla defaults first
+        if (attributeManager != null) attributeManager.resetAttributes(player);
+        // update stored origin
+        org.origins.player.PlayerData data = playerDataManager.getData(player.getUniqueId());
+        data.setOrigin(originId);
+        data.setTimePlayedWithOrigin(0);
+        // apply new origin attributes
+        if (attributeManager != null) attributeManager.applyAttributes(player, originId);
+    }
+
+    public void resetPlayerOrigin(org.bukkit.entity.Player player) {
+        if (attributeManager != null) attributeManager.resetAttributes(player);
+        org.origins.player.PlayerData data = playerDataManager.getData(player.getUniqueId());
+        data.setOrigin(null);
+        data.setTimePlayedWithOrigin(0);
     }
 
     // ---------------- config helpers ----------------

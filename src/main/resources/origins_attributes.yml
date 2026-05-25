@@ -1,0 +1,216 @@
+# Structured origin attributes.
+# Keys should be origin IDs (as used by the plugin). Values are numeric attributes.
+# Edit the file in the plugin data folder to tune origins at runtime.
+# Example:
+# dwarf:
+#   movement_speed_pct: 95
+#   mining_speed_pct: 150
+#   fall_damage_pct: 100
+#   max_health: 22.0
+#   attack_base: 2.0
+
+alchemist:
+  movement_speed_pct: 105
+  size_pct: 100
+  fall_damage_pct: 100
+  max_health: 18.0
+  attack_base: 1.0
+  mining_speed_pct: 100
+
+arachnid:
+  movement_speed_pct: 95
+  size_pct: 100
+  fall_damage_pct: 80
+  max_health: 18.0
+  attack_base: 1.0
+  mining_speed_pct: 114
+
+bee:
+  movement_speed_pct: 100
+  size_pct: 50
+  fall_damage_pct: 50
+  max_health: 14.0
+  attack_base: 1.0
+  mining_speed_pct: 90
+
+blazeborn:
+  movement_speed_pct: 95
+  size_pct: 100
+  fall_damage_pct: 100
+  max_health: 11.0
+  attack_base: 1.0
+  mining_speed_pct: 95
+
+chicken:
+  movement_speed_pct: 150
+  size_pct: 50
+  fall_damage_pct: 50
+  max_health: 18.0
+  attack_base: 1.0
+  mining_speed_pct: 90
+
+elytrian:
+  movement_speed_pct: 90
+  size_pct: 125
+  fall_damage_pct: 70
+  max_health: 20.0
+  attack_base: 1.0
+  mining_speed_pct: 95
+
+enderian:
+  movement_speed_pct: 103
+  size_pct: 150
+  max_health: 20.0
+  attack_base: 1.0
+  mining_speed_pct: 100
+
+fairy:
+  movement_speed_pct: 90
+  size_pct: 30
+  fall_damage_pct: 100
+  max_health: 8.0
+  attack_base: 1.0
+  mining_speed_pct: 110
+
+giant:
+  movement_speed_pct: 133
+  size_pct: 200
+  fall_damage_pct: 125
+  max_health: 30
+  attack_base: 2.0
+  mining_speed_pct: 133
+
+human:
+  movement_speed_pct: 100
+  size_pct: 100
+  fall_damage_pct: 100
+  max_health: 20.0
+  attack_base: 1.0
+  mining_speed_pct: 100
+
+huntsman:
+  movement_speed_pct: 90
+  size_pct: 100
+  fall_damage_pct: 100
+  max_health: 20.0
+  attack_base: 1.0
+  mining_speed_pct: 100
+
+inchling:
+  movement_speed_pct: 90
+  size_pct: 25
+  max_health: 12.0
+  attack_base: 1.0
+  mining_speed_pct: 100
+
+merling:
+  movement_speed_pct: 85
+  size_pct: 85
+  fall_damage_pct: 125
+  max_health: 20.0
+  attack_base: 1.0
+  mining_speed_pct: 85
+
+pawsworn:
+  movement_speed_pct: 175
+  size_pct: 65
+  fall_damage_pct: 5
+  max_health: 18.0
+  attack_base: 1.1
+  mining_speed_pct: 66
+
+phantom:
+  movement_speed_pct: 70
+  size_pct: 85
+  fall_damage_pct: 50
+  max_health: 16.0
+  attack_base: 1.0
+  mining_speed_pct: 65
+
+phytokin:
+  movement_speed_pct: 90
+  size_pct: 150
+  fall_damage_pct: 100
+  max_health: 26.0
+  attack_base: 1.0
+  mining_speed_pct: 85
+
+shulk:
+  movement_speed_pct: 70
+  size_pct: 75
+  fall_damage_pct: 100
+  max_health: 20.0
+  attack_base: 1.0
+  mining_speed_pct: 105
+
+werewolf:
+  movement_speed_pct: 105
+  size_pct: 100
+  fall_damage_pct: 100
+  max_health: 20.0
+  attack_base: 1.05
+  mining_speed_pct: 100
+
+breezeborn:
+  movement_speed_pct: 120
+  size_pct: 100
+  fall_damage_pct: 60
+  max_health: 18.0
+  attack_base: 0.95
+  mining_speed_pct: 95
+
+bunny:
+  movement_speed_pct: 115
+  size_pct: 85
+  fall_damage_pct: 85
+  max_health: 12.0
+  attack_base: 0.8
+  mining_speed_pct: 90
+
+undead:
+  movement_speed_pct: 100
+  size_pct: 100
+  fall_damage_pct: 100
+  max_health: 20.0
+  attack_base: 1.0
+  mining_speed_pct: 100
+
+sculkborn:
+  movement_speed_pct: 100
+  size_pct: 100
+  fall_damage_pct: 100
+  max_health: 20.0
+  attack_base: 1.0
+  mining_speed_pct: 95
+
+dwarf:
+  movement_speed_pct: 90
+  size_pct: 75
+  fall_damage_pct: 90
+  max_health: 22.0
+  attack_base: 1.0
+  mining_speed_pct: 125
+
+dragonborne:
+  movement_speed_pct: 105
+  size_pct: 110
+  fall_damage_pct: 75
+  max_health: 24.0
+  attack_base: 1.5
+  mining_speed_pct: 100
+
+beetle:
+  movement_speed_pct: 90
+  size_pct: 90
+  fall_damage_pct: 75
+  max_health: 26.0
+  attack_base: 1.2
+  mining_speed_pct: 95
+
+ant:
+  movement_speed_pct: 105
+  size_pct: 80
+  fall_damage_pct: 90
+  max_health: 16.0
+  attack_base: 0.8
+  mining_speed_pct: 105

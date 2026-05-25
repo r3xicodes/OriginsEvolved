@@ -95,7 +95,8 @@ public class OriginCommand implements CommandExecutor {
                 p.sendMessage(ChatColor.RED + "You need " + req + " seconds of playtime to evolve.");
                 return true;
             }
-            data.setOrigin(target);
+            // set origin via plugin helper so attributes update cleanly
+            plugin.setPlayerOrigin(p, target);
             p.sendMessage(ChatColor.GREEN + "Congratulations! You have evolved into " + target + "!");
             return true;
         } else if (sub.equals("transform")) {
@@ -148,9 +149,10 @@ public class OriginCommand implements CommandExecutor {
                 return true;
             }
             String originId = args[2];
-            PlayerData td = plugin.getPlayerDataManager().getData(target.getUniqueId());
-            td.setOrigin(originId);
+            // use plugin helper to set origin (resets previous attributes)
+            plugin.setPlayerOrigin(target, originId);
             // reset state values
+            PlayerData td = plugin.getPlayerDataManager().getData(target.getUniqueId());
             td.setIntState("hydration", 100);
             td.setIntState("dry_timer", 0);
             td.setIntState("sun_exposure", 0);
@@ -173,8 +175,9 @@ public class OriginCommand implements CommandExecutor {
                 sender.sendMessage(ChatColor.RED + "Player not found.");
                 return true;
             }
+            // reset origin via plugin helper to clear attributes cleanly
+            plugin.resetPlayerOrigin(target);
             PlayerData td2 = plugin.getPlayerDataManager().getData(target.getUniqueId());
-            td2.setOrigin(null);
             // clear states and boss bar
             td2.setIntState("hydration", 0);
             td2.setIntState("dry_timer", 0);

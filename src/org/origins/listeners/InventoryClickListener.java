@@ -45,9 +45,10 @@ public class InventoryClickListener implements Listener {
             Origin o = plugin.getOriginManager().getOrigin(name);
             if (o != null && event.getWhoClicked() instanceof org.bukkit.entity.Player) {
                 org.bukkit.entity.Player p = (org.bukkit.entity.Player) event.getWhoClicked();
-                PlayerData data = plugin.getPlayerDataManager().getData(p.getUniqueId());
-                data.setOrigin(name);
+                // set origin through plugin helper so attributes are reset/applied cleanly
+                plugin.setPlayerOrigin(p, name);
                 // reset all origin state values
+                org.origins.player.PlayerData data = plugin.getPlayerDataManager().getData(p.getUniqueId());
                 data.setIntState("hydration", 100);
                 data.setIntState("dry_timer", 0);
                 data.setIntState("sun_exposure", 0);
