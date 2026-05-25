@@ -9,44 +9,44 @@ transform_cooldown: 60 # generic transform cooldown in seconds
 ability_cooldowns:
   default: 5
   arcane_analysis: 10
-  arcane_shield: 30
-  glide: 15
-  swift_swim: 10
+  arcane_shield: 25
+  glide: 12
+  swift_swim: 8
   mermaids_grace: 5
-  veilwalk: 20
-  potion_possession: 60
-  charge_jump: 5
-  mega_jump: 30
-  lucky_eggs: 60
-  pounce: 30
-  dash: 5
-  verdant_grasp: 60
-  barkskin: 120
-  ender_chest: 15
-  levitation: 45
-  howl: 300
+  veilwalk: 15
+  potion_possession: 50
+  charge_jump: 4
+  mega_jump: 20
+  lucky_eggs: 45
+  pounce: 20
+  dash: 4
+  verdant_grasp: 50
+  barkskin: 90
+  ender_chest: 12
+  levitation: 30
+  howl: 180
   transform: 1200
-  leap: 10
-  breeze_ball: 20
-  wind_launch: 15
-  infectious_bite: 60
-  tenacious: 300
-  shriek: 30
-  prospecting: 300
-  rallying_cry: 240
-  winged_ascension: 45
-  chooser_of_the_slain: 180
-  blood_surge: 180
-  bat_form: 300
-  dragon_breath: 90
-  draconic_leap: 120
-  horn_charge: 60
-  burrow: 120
-  hive_call: 60
-  tunnel_dig: 90
-  boost: 30
-  thermal_surge: 30
-  fire_resistance: 60
+  leap: 8
+  breeze_ball: 15
+  wind_launch: 12
+  infectious_bite: 45
+  tenacious: 180
+  shriek: 20
+  prospecting: 180
+  rallying_cry: 180
+  winged_ascension: 30
+  chooser_of_the_slain: 120
+  blood_surge: 120
+  bat_form: 180
+  dragon_breath: 60
+  draconic_leap: 90
+  horn_charge: 45
+  burrow: 90
+  hive_call: 45
+  tunnel_dig: 60
+  boost: 20
+  thermal_surge: 20
+  fire_resistance: 45
 
 # evolution requirements (in seconds of playtime)
 evolution_requirements:

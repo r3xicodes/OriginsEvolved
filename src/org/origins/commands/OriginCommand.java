@@ -21,7 +21,11 @@ public class OriginCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (args.length == 0) {
-            sender.sendMessage(ChatColor.YELLOW + "Use /origin <choose|menu|evolve|transform|ability|info|set|reset|giveorb>");
+            if (sender instanceof Player) {
+                handleChoose((Player) sender);
+            } else {
+                sender.sendMessage(ChatColor.YELLOW + "Use /origin <choose|menu|evolve|transform|ability|info|set|reset|giveorb>");
+            }
             return true;
         }
         String sub = args[0].toLowerCase();
